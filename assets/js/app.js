@@ -54,4 +54,11 @@ d3.csv("assets/data/data.csv")
         var bottomAxis = d3.axisBottom(xLinearScale);
         var leftAxis = d3.axisLeft(yLinearScale);
 
+        // Append X & Y axis
+        chartGroup
+            .append("g")
+            .attr("transform", `translate(0, ${chartHeight})`)
+            .call(bottomAxis);
+        chartGroup.append("g").call(leftAxis);
+
     });
