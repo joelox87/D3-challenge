@@ -61,4 +61,12 @@ d3.csv("assets/data/data.csv")
             .call(bottomAxis);
         chartGroup.append("g").call(leftAxis);
 
+        //Define circles for states
+        var circles = chartGroup.selectAll("g circle").data(stateData);
+
+        var r = 10;
+        var circlesGroup = circles
+            .enter()
+            .append("g")
+            .attr("id", "circlesGroup");
     });
