@@ -20,3 +20,8 @@ var svg = d3
   .append("svg")
   .attr("width", svgWidth)
   .attr("height", svgHeight);
+
+// Append group area
+var chartGroup = svg
+.append("g")
+.attr("transform", `translate(${margin.left}, ${margin.top})`);
