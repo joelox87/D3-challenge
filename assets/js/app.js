@@ -50,4 +50,8 @@ d3.csv("assets/data/data.csv")
             .domain([0, d3.max(stateData, d => d.healthcare * 1.2)])
             .range([chartHeight, 0]);
 
-        });
+        // Set up axis functions
+        var bottomAxis = d3.axisBottom(xLinearScale);
+        var leftAxis = d3.axisLeft(yLinearScale);
+
+    });
