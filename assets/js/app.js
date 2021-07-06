@@ -9,3 +9,14 @@ var margin = {
   bottom: 60,
   left: 80
 };
+// Define chart area dimensions
+var chartHeight = svgHeight - margin.top - margin.bottom;
+var chartWidth = svgWidth - margin.left - margin.right;
+
+
+// Append SVG area to corresponding body
+var svg = d3
+  .select("#scatter")
+  .append("svg")
+  .attr("width", svgWidth)
+  .attr("height", svgHeight);
