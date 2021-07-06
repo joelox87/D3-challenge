@@ -45,3 +45,9 @@ d3.csv("assets/data/data.csv")
                 d3.max(stateData, d => d.poverty) * 1.2
             ])
             .range([0, chartWidth]);
+        var yLinearScale = d3
+            .scaleLinear()
+            .domain([0, d3.max(stateData, d => d.healthcare * 1.2)])
+            .range([chartHeight, 0]);
+
+        });
