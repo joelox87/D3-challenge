@@ -77,4 +77,22 @@ d3.csv("assets/data/data.csv")
             .attr("cy", d => yLinearScale(d.healthcare))
             .attr("r", r)
             .classed("stateCircle", true);
+
+        // Adding text onto circles
+        circlesGroup
+            .append("text")
+            .attr("x", d => xLinearScale(d.poverty))
+            .attr("y", d => yLinearScale(d.healthcare))
+            .classed("stateText", true)
+            .text(d => d.abbr)
+            .attr("font-size", r * 0.95);
+
+        //Tool tip setup
+        var toolTip = d3
+            .tip()
+            .attr("class", "d3-tip")
+            .offset([40, -20])
+            .html(function (d) {
+                return `${d.state}<br>Poverty: ${d.poverty}% <br>Lacks Healthcare: ${d.healthcare}%`;
+            });
     });
