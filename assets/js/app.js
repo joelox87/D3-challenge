@@ -69,4 +69,12 @@ d3.csv("assets/data/data.csv")
             .enter()
             .append("g")
             .attr("id", "circlesGroup");
+
+        // Append circles
+        circlesGroup
+            .append("circle")
+            .attr("cx", d => xLinearScale(d.poverty))
+            .attr("cy", d => yLinearScale(d.healthcare))
+            .attr("r", r)
+            .classed("stateCircle", true);
     });
