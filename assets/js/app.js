@@ -104,4 +104,26 @@ d3.csv("assets/data/data.csv")
             .on("mouseout", function (data, index) {
                 toolTip.hide(data);
             });
+        
+            // Set up axes labels
+        chartGroup
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left + 20)
+            .attr("x", 0 - (chartHeight - 100))
+            .attr("dy", "1em")
+            .attr("class", "axisText")
+            .text("Lacks Healthcare(%)");
+
+        chartGroup
+            .append("text")
+            .attr(
+                "transform",
+                `translate(${chartWidth / 2}, ${chartHeight + margin.top - 10})`
+            )
+            .attr("class", "axisText")
+            .text("In Poverty(%)");
+    })
+    .catch(function (error) {
+        console.log(error);
     });
