@@ -95,4 +95,13 @@ d3.csv("assets/data/data.csv")
             .html(function (d) {
                 return `${d.state}<br>Poverty: ${d.poverty}% <br>Lacks Healthcare: ${d.healthcare}%`;
             });
+        svg.call(toolTip);
+
+        circlesGroup
+            .on("mouseover", function (data) {
+                toolTip.show(data, this);
+            })
+            .on("mouseout", function (data, index) {
+                toolTip.hide(data);
+            });
     });
