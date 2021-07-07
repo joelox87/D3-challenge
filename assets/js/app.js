@@ -1,5 +1,4 @@
 // @TODO: YOUR CODE HERE!
-
 // Set up SVG area and chart margin dimensions
 var svgWidth = 960;
 var svgHeight = 500;
